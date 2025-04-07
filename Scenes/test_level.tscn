@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm6rm50qjb73e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6tpht"]
+size = Vector3(25, 1, 25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qsumy"]
+size = Vector3(25, 4, 1)
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_6tpht")
+
+[node name="Wall1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -13)
+mesh = SubResource("BoxMesh_qsumy")
+
+[node name="Wall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 13)
+mesh = SubResource("BoxMesh_qsumy")
+
+[node name="Wall3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13, 1.5, 0)
+mesh = SubResource("BoxMesh_qsumy")
+
+[node name="Wall4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13, 1.51731, -0.0166607)
+mesh = SubResource("BoxMesh_qsumy")
