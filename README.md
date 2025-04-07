@@ -1,6 +1,6 @@
 # ToiletGame1
 
-Controls:
-WASD = Move
-SPACE = Jump
-MOUSE MOVE = Look around
+## Controls:
+WASD = Move<br />
+SPACE = Jump<br />
+MOUSE MOVE = Look around<br />
