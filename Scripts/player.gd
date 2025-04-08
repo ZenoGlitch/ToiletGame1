@@ -6,7 +6,7 @@ const JUMP_VELOCITY = 4.5
 
 @onready var pivot = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
-var mouseSensitivity : float = 0.01
+var mouseSensitivity : float = 0.005
 
 func _unhandled_input(event):
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
