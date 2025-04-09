@@ -15,6 +15,17 @@ run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+InputManager="*res://Scripts/Singletons/input_manager.gd"
+SignalManager="*res://Scripts/Singletons/signal_manager.gd"
+GlobalResources="*res://Scripts/Singletons/global_resources.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [input]
 
 MoveForward={

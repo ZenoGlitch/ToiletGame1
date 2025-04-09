@@ -1,19 +1,20 @@
 extends CharacterBody3D
-
+class_name Player
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 @onready var pivot = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
-var mouseSensitivity : float = 0.01
+var mouseSensitivity : float = 0.005
 
 func _unhandled_input(event):
+
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			pivot.rotate_y(-event.relative.x * mouseSensitivity)
 			camera.rotate_x(-event.relative.y * mouseSensitivity)
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-70), deg_to_rad(60))
 
 
 func _physics_process(delta):

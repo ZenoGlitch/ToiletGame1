@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d00r2jsdd4050"]
+
+[ext_resource type="Script" path="res://Scripts/npc_test.gd" id="1_7pesd"]
+[ext_resource type="Texture2D" uid="uid://m2gv7ikwf6kv" path="res://icon.svg" id="2_u0el6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6eafj"]
+size = Vector3(1.67128, 1.10071, 1.55765)
+
+[node name="NPC_Test" type="Node3D"]
+script = ExtResource("1_7pesd")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture = ExtResource("2_u0el6")
+region_rect = Rect2(0, 0, 129, 128.5)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_6eafj")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

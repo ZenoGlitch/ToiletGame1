@@ -1,13 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckg85wrxocyes"]
+[gd_scene load_steps=7 format=3 uid="uid://ckg85wrxocyes"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_puyho"]
-[ext_resource type="PackedScene" uid="uid://cm6rm50qjb73e" path="res://Scenes/test_level.tscn" id="1_tee7t"]
 [ext_resource type="PackedScene" uid="uid://cmysaar8o15j6" path="res://Scenes/player.tscn" id="2_b75ob"]
+[ext_resource type="PackedScene" uid="uid://d3fhrq1wgv7wi" path="res://Scenes/LevelBlockout.tscn" id="3_wbmyg"]
+[ext_resource type="PackedScene" uid="uid://d00r2jsdd4050" path="res://Scenes/TestScenes/npc_test.tscn" id="4_um820"]
+[ext_resource type="PackedScene" uid="uid://dfnxwj6vc06vn" path="res://Scenes/counter.tscn" id="5_ii0nn"]
+[ext_resource type="PackedScene" uid="uid://d1p8fl3h1wrfa" path="res://Scenes/menu.tscn" id="6_5qvo8"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_puyho")
 
-[node name="TestLevel" parent="." instance=ExtResource("1_tee7t")]
-
 [node name="Player" parent="." instance=ExtResource("2_b75ob")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67438, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67438, 4.35073)
+
+[node name="Node3D" parent="." instance=ExtResource("3_wbmyg")]
+
+[node name="NPC_Test" parent="." instance=ExtResource("4_um820")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4797, 1.31946, 0)
+
+[node name="Counter" parent="." instance=ExtResource("5_ii0nn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8531, 0, -6.3335)
+
+[node name="Menu" parent="." instance=ExtResource("6_5qvo8")]
