@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1p8fl3h1wrfa"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_jcrui"]
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="2_h12uu"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ripg4"]
+size = Vector2(1920, 1080)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vnox0"]
+size = Vector2(800, 800)
+
+[node name="Menu" type="Node2D"]
+
+[node name="MainMenu" type="CanvasGroup" parent="."]
+script = ExtResource("1_jcrui")
+
+[node name="MainMenuBackground" type="Sprite2D" parent="MainMenu"]
+position = Vector2(960, 540)
+texture = SubResource("PlaceholderTexture2D_ripg4")
+
+[node name="StartGameButton" type="Button" parent="MainMenu"]
+offset_left = 890.0
+offset_top = 891.0
+offset_right = 1035.0
+offset_bottom = 960.0
+text = "Start Game"
+
+[node name="PauseMenu" type="CanvasGroup" parent="."]
+visible = false
+script = ExtResource("2_h12uu")
+
+[node name="PauseMenuBackground" type="Sprite2D" parent="PauseMenu"]
+position = Vector2(960, 540)
+texture = SubResource("PlaceholderTexture2D_vnox0")
+
+[node name="ClosePauseMenuButton" type="Button" parent="PauseMenu/PauseMenuBackground"]
+offset_left = 358.0
+offset_top = -390.0
+offset_right = 389.0
+offset_bottom = -359.0
+text = "X"
+
+[connection signal="button_down" from="MainMenu/StartGameButton" to="MainMenu" method="_on_start_game_button_button_down"]
+[connection signal="button_down" from="PauseMenu/PauseMenuBackground/ClosePauseMenuButton" to="PauseMenu" method="_on_close_pause_menu_button_button_down"]

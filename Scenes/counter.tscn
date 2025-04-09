@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfnxwj6vc06vn"]
+
+[ext_resource type="Script" path="res://Scripts/counter.gd" id="1_mlvwo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8nr5b"]
+size = Vector3(2.5, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1a2y7"]
+size = Vector3(2.3, 1, 1.1)
+
+[node name="Counter" type="Node3D"]
+script = ExtResource("1_mlvwo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_8nr5b")
+
+[node name="InteractArea3d" type="Area3D" parent="."]
+
+[node name="InteractCollisionShape3D" type="CollisionShape3D" parent="InteractArea3d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00831604, 0, 0.486908)
+shape = SubResource("BoxShape3D_1a2y7")
+
+[connection signal="body_entered" from="InteractArea3d" to="." method="_on_interact_area_3d_body_entered"]
+[connection signal="body_exited" from="InteractArea3d" to="." method="_on_interact_area_3d_body_exited"]
