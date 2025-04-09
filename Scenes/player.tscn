@@ -9,16 +9,16 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 
 [node name="Player" type="Node3D"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="PlayerCharacterBody3D" type="CharacterBody3D" parent="."]
 script = ExtResource("1_2slrl")
 
-[node name="Capsule" type="MeshInstance3D" parent="CharacterBody3D"]
+[node name="Capsule" type="MeshInstance3D" parent="PlayerCharacterBody3D"]
 mesh = SubResource("CapsuleMesh_n1crt")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerCharacterBody3D"]
 shape = SubResource("ConvexPolygonShape3D_ur8r1")
 
-[node name="CameraPivot" type="Node3D" parent="CharacterBody3D"]
+[node name="CameraPivot" type="Node3D" parent="PlayerCharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.800384, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/CameraPivot"]
+[node name="Camera3D" type="Camera3D" parent="PlayerCharacterBody3D/CameraPivot"]

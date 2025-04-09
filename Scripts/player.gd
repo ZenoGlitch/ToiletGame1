@@ -9,6 +9,7 @@ const JUMP_VELOCITY = 4.5
 var mouseSensitivity : float = 0.005
 
 func _unhandled_input(event):
+
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			pivot.rotate_y(-event.relative.x * mouseSensitivity)
